@@ -19,12 +19,12 @@
 
 /// Enum of requirement categories. Each variant carries a `kind` string and a
 /// display `prefix` used to label requirements (e.g. `TR0001`).
-/// Use `requirement-category.technical`, `.risk`, or `.process` for
+/// Use `requirement-category.technical`, `.risk`, or `.documentation` for
 /// `requirement.category`.
 #let requirement-category = (
   technical: (kind: "technical", prefix: "TR"),
   risk: (kind: "risk", prefix: "RR"),
-  process: (kind: "process", prefix: "PR")
+  documentation: (kind: "documentation", prefix: "DR")
 )
 
 /// Enum of requirement obligation levels, corresponding to IEEE word usage.
@@ -37,7 +37,7 @@
 )
 
 /// Renders a numbered, referenceable requirement paraggraph.
-/// - category (dict): Requirement category; one of `requirement-category.technical`, `.risk`, or `.process`.
+/// - category (dict): Requirement category; one of `requirement-category.technical`, `.risk`, or `.documentation`.
 /// - number (int): Unique requirement number. Must not collide with any other requirement in the document.
 /// - ics-assignment (str, array): One or more ICS role names this requirement is assigned to.
 /// - level (str): Obligation level; one of `requirement-level.shall`, `.should`, or `.may`.
@@ -50,8 +50,8 @@
   body
 ) = {
   assert(
-    category in (requirement-category.technical, requirement-category.risk, requirement-category.process),
-    message: "category must be requirement-category.technical, requirement-category.risk, requirement-category.process"
+    category in (requirement-category.technical, requirement-category.risk, requirement-category.documentation),
+    message: "category must be requirement-category.technical, requirement-category.risk, requirement-category.documentation"
   )
 
   assert(number != none, message: "Number passed is none")

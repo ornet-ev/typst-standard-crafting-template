@@ -9,6 +9,12 @@ No changes have been logged prior to version 0.2.0.
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-04
+
+### Changed
+
+- requirements category `process` changed to `documentation`.
+
 ## [0.2.0] - 2026-10-28
 
 ### Changed
