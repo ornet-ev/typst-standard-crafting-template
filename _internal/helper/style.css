@@ -23,7 +23,7 @@
   /* Semantic accents */
   --req-technical:    #003087;
   --req-risk:         #8b1a1a;
-  --req-process:      #1a5c1a;
+  --req-documentation:#1a5c1a;
   --note-bg:          #fffbea;
   --note-border:      #e6b800;
   --note-ink:         #5a4500;
@@ -330,13 +330,13 @@ requirement[category="risk"]::before {
   background: var(--req-risk);
 }
 
-requirement[category="process"] {
-  border-color: var(--req-process);
+requirement[category="documentation"] {
+  border-color: var(--req-documentation);
   background: #f8fff8;
 }
-requirement[category="process"]::before {
-  content: "Requirement " attr(number) " (process)";
-  background: var(--req-process);
+requirement[category="documentation"]::before {
+  content: "Requirement " attr(number) " (documentation)";
+  background: var(--req-documentation);
 }
 
 requirement p { margin: 0.4rem 0; }
@@ -838,7 +838,7 @@ html[data-theme="dark"] {
 
   --req-technical:    #2a5298;
   --req-risk:         #7a2020;
-  --req-process:      #1e5c1e;
+  --req-documentation:#1e5c1e;
   --note-bg:          #1e1a00;
   --note-border:      #c49a00;
   --note-ink:         #d4b84a;
@@ -864,7 +864,7 @@ html[data-theme="dark"] {
 
     --req-technical:    #2a5298;
     --req-risk:         #7a2020;
-    --req-process:      #1e5c1e;
+    --req-documentation:#1e5c1e;
     --note-bg:          #1e1a00;
     --note-border:      #c49a00;
     --note-ink:         #d4b84a;
@@ -905,11 +905,11 @@ html[data-theme="dark"] note::before { color: var(--note-ink); }
 html[data-theme="dark"] requirement,
 html[data-theme="dark"] requirement[category="technical"] { background: var(--brand-blue-pale); }
 html[data-theme="dark"] requirement[category="risk"]      { background: #1e0a0a; }
-html[data-theme="dark"] requirement[category="process"]   { background: #0a1a0a; }
+html[data-theme="dark"] requirement[category="documentation"]   { background: #0a1a0a; }
 @media (prefers-color-scheme: dark) {
   html:not([data-theme="light"]) requirement                           { background: var(--brand-blue-pale); }
   html:not([data-theme="light"]) requirement[category="risk"]         { background: #1e0a0a; }
-  html:not([data-theme="light"]) requirement[category="process"]      { background: #0a1a0a; }
+  html:not([data-theme="light"]) requirement[category="documentation"]      { background: #0a1a0a; }
 }
 
 /* Inline code */
